@@ -4,10 +4,11 @@ namespace CadastroUsuario.Model
 {
     public class Usuario
     {
-        public string Id { get; set; }
+        [Key]
+        public string Id { get; private set; } = Guid.NewGuid().ToString();
         public string FirstName { get; set; }
         public string? SurName { get; set; }
         public int Age { get; set; }
-        public DateTime CreationDate { get; set; }
+        public DateTime CreationDate { get; private set; } = DateTime.UtcNow;
     }
 }

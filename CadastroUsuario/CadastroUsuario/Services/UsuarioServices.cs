@@ -36,14 +36,5 @@ namespace CadastroUsuario.Services
             throw new Exception("Erro no mapeamento.");
         }
 
-        public string CriarId()
-        {
-            return  Guid.NewGuid().ToString();
-        }
-
-        public DateTime BuscarHora()
-        {
-            return DateTime.UtcNow;
-        }
     }
 }

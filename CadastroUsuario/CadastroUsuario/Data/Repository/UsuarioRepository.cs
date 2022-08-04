@@ -19,8 +19,7 @@ namespace CadastroUsuario.Data.Repository
             var usuarioMapeado = Services.TransformarCreateDtoEmUsuario(usuarioParaCriar);
             if (usuarioMapeado != null)
             {
-                usuarioMapeado.Id = Services.CriarId();
-                usuarioMapeado.CreationDate = Services.BuscarHora();
+
                 Context.Usuario.Add(usuarioMapeado);
                 if (Context.SaveChanges() > 0)
                 {

@@ -8,8 +8,5 @@ namespace CadastroUsuario.Services.Contracts
         public Usuario TransformarCreateDtoEmUsuario(CreateUsuarioDto usuarioParaMapear);
         public ReadUsuarioDto TransformarUsuarioEmReadDto(Usuario usuarioParaMapear);
         public Usuario TransformarUpdadeDtoEmUsuario(UpdateUsuarioDto usuarioParaMapear);
-
-        public string CriarId();
-        public DateTime BuscarHora();
     }
 }
