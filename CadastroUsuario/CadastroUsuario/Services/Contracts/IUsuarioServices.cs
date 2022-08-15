@@ -1,12 +1,12 @@
-﻿using CadastroUsuario.Data.Dto;
+﻿using CadastroUsuario.Data.Dto.UsuarioDto;
 using CadastroUsuario.Model;
 
 namespace CadastroUsuario.Services.Contracts
 {
     public interface IUsuarioServices
     {
-        public Usuario TransformarCreateDtoEmUsuario(CreateUsuarioDto usuarioParaMapear);
-        public ReadUsuarioDto TransformarUsuarioEmReadDto(Usuario usuarioParaMapear);
-        public Usuario TransformarUpdadeDtoEmUsuario(UpdateUsuarioDto usuarioParaMapear);
+        public UsuarioModel TransformarCreateDtoEmUsuario(CreateUsuarioDto usuarioParaMapear);
+        public ReadUsuarioDto TransformarUsuarioEmReadDto(UsuarioModel usuarioParaMapear);
+        public UsuarioModel TransformarUpdadeDtoEmUsuario(UpdateUsuarioDto usuarioParaMapear);
     }
 }

@@ -1,4 +1,4 @@
-﻿using CadastroUsuario.Data.Dto;
+﻿using CadastroUsuario.Data.Dto.UsuarioDto;
 using CadastroUsuario.Data.Repository.Contracts;
 using CadastroUsuario.Services;
 using CadastroUsuario.Services.Contracts;
@@ -24,7 +24,11 @@ namespace CadastroUsuario.Data.Repository
                 if (Context.SaveChanges() > 0)
                 {
                     var usuarioRetorno = Services.TransformarUsuarioEmReadDto(usuarioMapeado);
-                    if (usuarioRetorno != null) return usuarioRetorno;
+                    if (usuarioRetorno != null)
+                    {
+                        Context.ChangeTracker.Clear();
+                        return usuarioRetorno;
+                    }
                     throw new Exception("Erro no mapeamento");
                 }
                 throw new Exception("Erro ao salvar usuario no banco.");
@@ -54,11 +58,15 @@ namespace CadastroUsuario.Data.Repository
             if (usuario != null)
             {
                 var usuarioRetorno = Services.TransformarUsuarioEmReadDto(usuario);
-                if (usuarioRetorno != null) return usuarioRetorno;
+                if (usuarioRetorno != null)
+                {
+                    Context.ChangeTracker.Clear();
+                    return usuarioRetorno;
+                }
                     throw new Exception("Erro no mapeamento.");
 
             }
-            throw new Exception("Erro na busca.");
+            throw new Exception("Id inválido.");
 
         }
 
@@ -72,7 +80,12 @@ namespace CadastroUsuario.Data.Repository
                 if (Context.SaveChanges() > 0)
                 {
                     var usuarioParaRetornar = Services.TransformarUsuarioEmReadDto(usuarioMapeado);
-                    if (usuarioParaRetornar != null) return usuarioParaRetornar;
+                    if (usuarioParaRetornar != null)
+                    {
+                        Context.ChangeTracker.Clear();
+                        return usuarioParaRetornar;
+
+                    }
                     throw new Exception("Erro no mapeamento.");
 
                 }
@@ -91,7 +104,11 @@ namespace CadastroUsuario.Data.Repository
             if (usuarioParaDeletar != null)
             {
                 Context.Usuario.Remove(usuarioParaDeletar);
-                if (Context.SaveChanges() > 0) return true;
+                if (Context.SaveChanges() > 0)
+                {
+                    Context.ChangeTracker.Clear();
+                    return true;
+                }
                 throw new Exception("Erro ao salvar deleção.");
 
             }
