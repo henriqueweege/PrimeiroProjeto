@@ -1,5 +1,6 @@
 using CadastroUsuario.Data;
 using CadastroUsuario.Data.Repository;
+using CadastroUsuario.Factory;
 using CadastroUsuario.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,9 +14,10 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<UsuarioServices, UsuarioServices>();
 builder.Services.AddScoped<UsuarioRepository, UsuarioRepository>();
+builder.Services.AddScoped<LogServices, LogServices>();
+builder.Services.AddScoped<LogRepository, LogRepository>();
+builder.Services.AddScoped<LogFactory, LogFactory>();
 builder.Services.AddScoped<DataContext, DataContext>();
-
-
 
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());

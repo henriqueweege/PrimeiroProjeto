@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using CadastroUsuario.Data.Dto;
+using CadastroUsuario.Data.Dto.UsuarioDto;
 using CadastroUsuario.Model;
 
 namespace CadastroUsuario.Profiles
@@ -8,9 +8,9 @@ namespace CadastroUsuario.Profiles
     {
         public UsuarioProfile()
         {
-            CreateMap<CreateUsuarioDto, Usuario>();
-            CreateMap<UpdateUsuarioDto, Usuario>();
-            CreateMap<Usuario, ReadUsuarioDto > ();
+            CreateMap<CreateUsuarioDto, UsuarioModel>();
+            CreateMap<UpdateUsuarioDto, UsuarioModel>();
+            CreateMap<UsuarioModel, ReadUsuarioDto > ();
         }
     }
 }

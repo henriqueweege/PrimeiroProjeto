@@ -1,4 +1,4 @@
-﻿using CadastroUsuario.Data.Dto;
+﻿using CadastroUsuario.Data.Dto.UsuarioDto;
 
 namespace CadastroUsuario.Data.Repository.Contracts
 {

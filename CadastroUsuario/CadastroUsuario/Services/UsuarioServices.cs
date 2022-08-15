@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using CadastroUsuario.Data.Dto;
+using CadastroUsuario.Data.Dto.UsuarioDto;
 using CadastroUsuario.Model;
 using CadastroUsuario.Services.Contracts;
 
@@ -12,15 +12,15 @@ namespace CadastroUsuario.Services
         {
             Mapper = mapper;
         }
-        public Usuario TransformarCreateDtoEmUsuario(CreateUsuarioDto usuarioParaMapear)
+        public UsuarioModel TransformarCreateDtoEmUsuario(CreateUsuarioDto usuarioParaMapear)
         {
-            var usuarioMapeado = Mapper.Map<Usuario>(usuarioParaMapear);
+            var usuarioMapeado = Mapper.Map<UsuarioModel>(usuarioParaMapear);
             if (usuarioMapeado != null) return usuarioMapeado;
 
             throw new Exception("Erro no mapeamento.");
         }
 
-        public ReadUsuarioDto TransformarUsuarioEmReadDto(Usuario usuarioParaMapear)
+        public ReadUsuarioDto TransformarUsuarioEmReadDto(UsuarioModel usuarioParaMapear)
         {
             var usuarioMapeado = Mapper.Map<ReadUsuarioDto>(usuarioParaMapear);
             if (usuarioMapeado != null) return usuarioMapeado;
@@ -28,22 +28,13 @@ namespace CadastroUsuario.Services
             throw new Exception("Erro no mapeamento.");
         }
 
-        public Usuario TransformarUpdadeDtoEmUsuario(UpdateUsuarioDto usuarioParaMapear)
+        public UsuarioModel TransformarUpdadeDtoEmUsuario(UpdateUsuarioDto usuarioParaMapear)
         {
-            var usuarioMapeado = Mapper.Map<Usuario>(usuarioParaMapear);
+            var usuarioMapeado = Mapper.Map<UsuarioModel>(usuarioParaMapear);
             if (usuarioMapeado != null) return usuarioMapeado;
 
             throw new Exception("Erro no mapeamento.");
         }
 
-        public string CriarId()
-        {
-            return  Guid.NewGuid().ToString();
-        }
-
-        public DateTime BuscarHora()
-        {
-            return DateTime.UtcNow;
-        }
     }
 }
