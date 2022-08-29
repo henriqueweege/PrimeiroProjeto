@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="CadastroUsuario.App.Views.PaginaInicial"
+             Title="Pagina Inicial"
+             >
+    
+    <ContentPage.Content>
+        
+                
+    <StackLayout >
+
+            <Label Text="Usuários Cadastrados" 
+                   FontSize="30" 
+                   Margin="10,30,10,10" 
+                   HorizontalTextAlignment="Center" 
+                   TextColor="#ffff"/>
+        <StackLayout>
+            <RefreshView x:Name ="Refresh" 
+                Refreshing="Atualziar">
+                    <ListView x:Name="UsuariosCadastrados"    ItemSelected="MenuDeletarAtualizar" >
+
+                        <ListView.ItemTemplate >
+                            <DataTemplate >
+
+                                <TextCell  Text="{Binding  DataToDisplay}" 
+                                   TextColor="#ffff"
+                                   
+                                />
+
+
+                            </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </RefreshView >
+            </StackLayout>
+    </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CadastroUsuario.App.Views.AtualizarUsuario"
+             Visual="Material">
+    <Frame
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="Center"
+            WidthRequest="300"
+            Margin="10"
+            BackgroundColor="#37474f"
+        Visual="Material"
+        
+            >
+        <StackLayout Margin="0,0,0,0">
+            <Label Text="Por favor, preencha os campos que deseja atualizar." TextColor="#ffff"/>
+            <Entry x:Name="Nome" Placeholder="Nome" BackgroundColor="#37474f" PlaceholderColor="DarkGray" TextColor="AliceBlue"/>
+            <Entry x:Name="Sobrenome" Placeholder="Sobrenome" BackgroundColor="#37474f" PlaceholderColor="DarkGray" TextColor="AliceBlue"/>
+            <Entry x:Name="Idade" Placeholder="Idade" BackgroundColor="#37474f" MaxLength="3" PlaceholderColor="DarkGray" TextColor="AliceBlue"/>
+            <StackLayout Margin="0,0,0,0" Orientation="Horizontal">
+                <Button Text="Atualizar usuário" HorizontalOptions="CenterAndExpand" Margin="0" Clicked="AtualizarUsuarioAsync" BackgroundColor="#34515f"/>
+                <Button Text="Voltar" HorizontalOptions="CenterAndExpand" Margin="0" Clicked="Voltar" BackgroundColor="#34515f"/>
+
+            </StackLayout>
+        </StackLayout>
+    </Frame>
+    
+
+</ContentPage>

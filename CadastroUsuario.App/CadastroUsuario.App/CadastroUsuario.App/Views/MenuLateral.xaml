@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:local="clr-namespace:CadastroUsuario.App.Views" xmlns:local1="clr-namespace:CadastroUsuario.App"
+                  x:Class="CadastroUsuario.App.Views.MenuLateral"
+                  Title="Menu"
+                  >
+    <!--FlowDirection="RightToLeft">-->
+
+    <MasterDetailPage.Master>
+        <ContentPage Title="Menu">
+            <StackLayout>
+                <Button Text="Cadastrar Usuário" 
+                        Clicked="NavegarParaCadastrarUsuario"  
+                        HorizontalOptions="Start" 
+                        BackgroundColor="Transparent" 
+                        Margin="30,30" 
+                        FontSize="17"/>
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
+
+    <MasterDetailPage.Detail>
+        
+        <local:PaginaInicial/>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>
