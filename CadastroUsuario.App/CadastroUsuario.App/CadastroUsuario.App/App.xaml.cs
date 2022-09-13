@@ -12,10 +12,19 @@ namespace CadastroUsuario.App
         {
             InitializeComponent();
 
-            
-            var pagina = new NavigationPage(new MenuLateral());
+            try
+            {
+            var pagina = new NavigationPage(new PaginaInicial());
 
             MainPage = pagina;
+            }
+            catch(Exception ex)
+            {
+                var x = 0;
+            }
+
+            
+
 
 
         }

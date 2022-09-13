@@ -18,25 +18,32 @@ namespace CadastroUsuario.App.Service
             Client = new HttpClient();
             
         }
-        public async Task<bool> CadastrarUsuario(CreateCadastraUsuarioDto usuarioParaCriar)
+        public async Task<bool> CadastrarUsuario(CreateUsuarioDto usuarioParaCriar)
         {
             return Client.PostAsJsonAsync($"{BaseUrl}Usuario", usuarioParaCriar).Result.IsSuccessStatusCode;
         }
 
-        public async Task<IEnumerable<ReadCadastraUsuarioDto>> BuscarUsuarios()
+        public async Task<IEnumerable<ReadUsuarioDto>> BuscarUsuarios()
         {
-
+            try
+            {
 
             var response = await Client.GetAsync($"{BaseUrl}Usuario");
 
           
 
             response.EnsureSuccessStatusCode();
-            var responseAsList = await response.Content.ReadAsAsync<IEnumerable<ReadCadastraUsuarioDto>>();
+            var responseAsList = await response.Content.ReadAsAsync<IEnumerable<ReadUsuarioDto>>();
 
 
 
             return responseAsList;
+            }
+            catch(Exception ex)
+            {
+                return new List<ReadUsuarioDto>();
+            }
+
         }
 
         public async Task<bool> DeletarUsuario(string id)
@@ -52,7 +59,7 @@ namespace CadastroUsuario.App.Service
 
         }
 
-        public async Task<bool> AtualizarUsuario(ReadCadastraUsuarioDto usuarioParaAtualizar)
+        public async Task<bool> AtualizarUsuario(ReadUsuarioDto usuarioParaAtualizar)
         {
             return Client.PutAsJsonAsync($"{BaseUrl}Usuario/{usuarioParaAtualizar.Id}", usuarioParaAtualizar).Result.IsSuccessStatusCode;
 

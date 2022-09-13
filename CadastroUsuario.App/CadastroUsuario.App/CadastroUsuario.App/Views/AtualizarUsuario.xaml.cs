@@ -15,8 +15,8 @@ namespace CadastroUsuario.App.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AtualizarUsuario : ContentPage
     {
-        public ReadCadastraUsuarioDto UsuarioParaAtualizar { get; set; }
-        public AtualizarUsuario(ReadCadastraUsuarioDto usuarioParaAtualizar)
+        public ReadUsuarioDto UsuarioParaAtualizar { get; set; }
+        public AtualizarUsuario(ReadUsuarioDto usuarioParaAtualizar)
         {
             InitializeComponent();
             UsuarioParaAtualizar = usuarioParaAtualizar;
@@ -51,7 +51,7 @@ namespace CadastroUsuario.App.Views
             if (atualizado)
             {
                 await DisplayAlert("Usuário atualizado com sucesso.", " ", "Ok");
-                Navigation.PopAsync();
+                Navigation.PopToRootAsync();
                 return;
 
             }
@@ -59,7 +59,7 @@ namespace CadastroUsuario.App.Views
 
         }
 
-        private async Task<bool> EnviarUsuarioParaAtualizar(ReadCadastraUsuarioDto usuarioParaAtualizar)
+        private async Task<bool> EnviarUsuarioParaAtualizar(ReadUsuarioDto usuarioParaAtualizar)
         {
             var cadastrarServices = new CadastroUsuarioServices();
             var atualizado = false;
@@ -75,11 +75,7 @@ namespace CadastroUsuario.App.Views
             if (atualizado) return true;
             return false;
         }
-        private void Voltar(object sender, EventArgs e)
-        {
-
-            Navigation.PopAsync();
-        }
+        
 
     }
 }

@@ -2,7 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CadastroUsuario.App.Views.AtualizarUsuario"
-             Visual="Material">
+             Visual="Material"
+             BackgroundColor="#303030">
+    
     <Frame
             HorizontalOptions="CenterAndExpand"
             VerticalOptions="Center"
@@ -19,7 +21,6 @@
             <Entry x:Name="Idade" Placeholder="Idade" BackgroundColor="#37474f" MaxLength="3" PlaceholderColor="DarkGray" TextColor="AliceBlue"/>
             <StackLayout Margin="0,0,0,0" Orientation="Horizontal">
                 <Button Text="Atualizar usuário" HorizontalOptions="CenterAndExpand" Margin="0" Clicked="AtualizarUsuarioAsync" BackgroundColor="#34515f"/>
-                <Button Text="Voltar" HorizontalOptions="CenterAndExpand" Margin="0" Clicked="Voltar" BackgroundColor="#34515f"/>
 
             </StackLayout>
         </StackLayout>

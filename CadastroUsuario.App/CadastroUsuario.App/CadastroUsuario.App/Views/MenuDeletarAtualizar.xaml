@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CadastroUsuario.App.Views.MenuDeletarAtualizar"
+             BackgroundColor="#303030"
+             >
+    <Frame
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="Center"
+            WidthRequest="300"
+            Margin="10"
+            BackgroundColor="#37474f"
+        Visual="Material"
+            >
+        <StackLayout Margin="0,0,0,0">
+            <Label Text="O que deseja realizar?" TextColor="#ffff"/>
+            <StackLayout Margin="0,0,0,0" Orientation="Horizontal">
+                <Button Text="Atualizar Usuário" HorizontalOptions="CenterAndExpand" Margin="0" Clicked="AtualizarUsuario" BackgroundColor="#34515f"/>
+                <Button Text="Deletar Usuário" HorizontalOptions="CenterAndExpand" Margin="0,0,50,0" Clicked="DeletarUsuario" BackgroundColor="#34515f"/>
+            </StackLayout>
+
+        </StackLayout>
+    </Frame>\\\\\\\\
+</ContentPage>

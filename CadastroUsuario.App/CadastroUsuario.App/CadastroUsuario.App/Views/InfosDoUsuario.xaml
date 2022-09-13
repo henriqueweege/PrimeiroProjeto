@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+          xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+          x:Class="CadastroUsuario.App.Views.InfosDoUsuario"
+          xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+          
+          >
+    <Grid xct:TouchEffect.NativeAnimation="True"
+          xct:TouchEffect.NativeAnimationColor="#607d8c" 
+          xct:TouchEffect.AnimationDuration="500"
+          xct:TouchEffect.AnimationEasing="{x:Static Easing.CubicInOut}"
+          xct:TouchEffect.PressedScale="0.75"
+          xct:TouchEffect.LongPressCommand="{Binding TouchCommand}" xct:TouchEffect.LongPressCommandParameter="{Binding Usuario}"
+          xct:TouchEffect.LongPressDuration="500"
+          BackgroundColor="#303030"
+          >
+
+        <Label  Text="{Binding Usuario.VisualizacaoNome}" Padding="20,6,0,0" TextColor="white"  />
+        <Label  Text="{Binding Usuario.VisualizacaoSobrenome}" Padding="190,6,0,0" TextColor="white"/>
+        <Label  Text="{Binding Usuario.VisualizacaoIdade}" Padding="350,6,0,0" TextColor="white" />
+    </Grid>
+</ViewCell>

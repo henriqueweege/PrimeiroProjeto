@@ -1,6 +1,7 @@
 ﻿using CadastroUsuario.App.Dto;
 using CadastroUsuario.App.Service;
 using System;
+using System.Linq;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -9,26 +10,20 @@ namespace CadastroUsuario.App.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PaginaInicial : ContentPage
     {
-        public Command LongPress { get; }
+        public Command TouchCommand { get; set; }
+
         public PaginaInicial()
         {
             InitializeComponent();
             BuscarUsuarios();
-            LongPress = new Command(() => DisplayAlert(" ", " ", "Ok"));
+            TouchCommand = new Command<ReadUsuarioDto>((ReadUsuarioDto user) => Navigation.PushAsync(new MenuDeletarAtualizar(user))); 
+            BindingContext = this;
 
         }
 
-        private async void NavegarParaAdicionarUsuario(object sender, EventArgs e)
+        private void NavegarParaCadastrarNovoUsuario(object sender, EventArgs e)
         {
-
-            _ = Navigation.PushAsync(new CadastrarUsuario());
-
-        }
-
-        [Obsolete]
-        private void AbrirMenu(object sender, EventArgs e)
-        {
-            ((MasterDetailPage)App.Current.MainPage).IsPresented = true;
+            Navigation.PushAsync(new CadastrarUsuario());
         }
 
         public async void BuscarUsuarios()
@@ -37,7 +32,9 @@ namespace CadastroUsuario.App.Views
             try
             {
                 var usuariosCadastrados = await cadastroServices.BuscarUsuarios();
-                UsuariosCadastrados.ItemsSource = usuariosCadastrados;
+                 UsuariosCadastrados.ItemsSource = usuariosCadastrados.Select(usuario => new InfosDoUsuario(usuario, TouchCommand));
+               // UsuariosCadastrados.ItemsSource = usuariosCadastrados;
+
             }
             catch (Exception ex)
             {
@@ -45,13 +42,14 @@ namespace CadastroUsuario.App.Views
 
             }
         }
-
         private async void MenuDeletarAtualizar(object sender, SelectedItemChangedEventArgs e)
         {
+
             if (e.SelectedItem == null) return;
             var opcoes = new string[2];
             opcoes[0] = "Atualizar";
             opcoes[1] = "Deletar";
+
 
             var opcaoEscolhida = await DisplayActionSheet("Escolha a ação desejada.", "Cancelar", " ", opcoes);
 
@@ -61,7 +59,7 @@ namespace CadastroUsuario.App.Views
             {
                 try
                 {
-                    var usuarioParaExcluir = (ReadCadastraUsuarioDto)e.SelectedItem;
+                    var usuarioParaExcluir = (ReadUsuarioDto)e.SelectedItem;
 
                     var usuarioExcluido = cadastroServices.DeletarUsuario(usuarioParaExcluir.Id).Result;
                     if (usuarioExcluido)
@@ -85,15 +83,15 @@ namespace CadastroUsuario.App.Views
             {
                 try
                 {
-                    var usuarioParaAtualizar = (ReadCadastraUsuarioDto)e.SelectedItem;
+                    var usuarioParaAtualizar = (ReadUsuarioDto)e.SelectedItem;
                     Navigation.PushAsync(new AtualizarUsuario(usuarioParaAtualizar));
-                    
+
 
                 }
                 catch (Exception ex)
                 {
                     await DisplayAlert("Ocorreu um erro ao tentar atualizar o usuário.", " ", "Ok");
-                    
+
 
                 }
 
@@ -103,7 +101,7 @@ namespace CadastroUsuario.App.Views
 
         }
 
-        private void Atualziar(object sender, EventArgs e)
+        private void Atualizar(object sender, EventArgs e)
         {
             BuscarUsuarios();
             Refresh.IsRefreshing = false;

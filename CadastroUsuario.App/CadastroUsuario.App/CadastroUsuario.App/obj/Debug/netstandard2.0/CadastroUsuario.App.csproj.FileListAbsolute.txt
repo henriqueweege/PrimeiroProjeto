@@ -21,4 +21,5 @@ C:\Intelitrader -dev\PrimeiroProjeto\CadastroUsuario.App\CadastroUsuario.App\Cad
 C:\Intelitrader -dev\PrimeiroProjeto\CadastroUsuario.App\CadastroUsuario.App\CadastroUsuario.App\bin\Debug\netstandard2.0\Mono.Android.xml
 C:\Intelitrader -dev\PrimeiroProjeto\CadastroUsuario.App\CadastroUsuario.App\CadastroUsuario.App\obj\Debug\netstandard2.0\CadastroUsuario.App.csproj.CopyComplete
 C:\Intelitrader -dev\PrimeiroProjeto\CadastroUsuario.App\CadastroUsuario.App\CadastroUsuario.App\obj\Debug\netstandard2.0\Views\AtualizarUsuario.xaml.g.cs
-C:\Intelitrader -dev\PrimeiroProjeto\CadastroUsuario.App\CadastroUsuario.App\CadastroUsuario.App\obj\Debug\netstandard2.0\Views\MenuLateral.xaml.g.cs
+C:\Intelitrader -dev\PrimeiroProjeto\CadastroUsuario.App\CadastroUsuario.App\CadastroUsuario.App\obj\Debug\netstandard2.0\Views\InfosDoUsuario.xaml.g.cs
+C:\Intelitrader -dev\PrimeiroProjeto\CadastroUsuario.App\CadastroUsuario.App\CadastroUsuario.App\obj\Debug\netstandard2.0\Views\MenuDeletarAtualizar.xaml.g.cs

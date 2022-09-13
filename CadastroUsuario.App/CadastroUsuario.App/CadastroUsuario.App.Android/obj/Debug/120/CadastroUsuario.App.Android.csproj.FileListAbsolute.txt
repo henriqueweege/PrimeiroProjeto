@@ -711,3 +711,4 @@ C:\Intelitrader -dev\PrimeiroProjeto\CadastroUsuario.App\CadastroUsuario.App\Cad
 C:\Intelitrader -dev\PrimeiroProjeto\CadastroUsuario.App\CadastroUsuario.App\CadastroUsuario.App.Android\obj\Debug\120\android\src\crc64515ee83f00766c60\SemanticEffectRouter_SemanticAccessibilityDelegate.java
 C:\Intelitrader -dev\PrimeiroProjeto\CadastroUsuario.App\CadastroUsuario.App\CadastroUsuario.App.Android\obj\Debug\120\android\src\crc64515ee83f00766c60\VisualFeedbackEffectRouter_FastRendererOnLayoutChangeListener.java
 C:\Intelitrader -dev\PrimeiroProjeto\CadastroUsuario.App\CadastroUsuario.App\CadastroUsuario.App.Android\obj\Debug\120\android\src\crc645b8ccbad6ecd7dce\SideMenuViewRenderer.java
+C:\Intelitrader -dev\PrimeiroProjeto\CadastroUsuario.App\CadastroUsuario.App\CadastroUsuario.App.Android\obj\Debug\120\android\src\crc640f6a548bb0a76512\CustomListViewRenderer.java

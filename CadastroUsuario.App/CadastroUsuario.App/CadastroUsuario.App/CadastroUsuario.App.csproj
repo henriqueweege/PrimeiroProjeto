@@ -30,15 +30,27 @@
     <EmbeddedResource Update="Views\AtualizarUsuario.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\MenuLateral.xaml">
+    <EmbeddedResource Update="Views\MenuDeletarAtualizar.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\PaginaInicial.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\InfosDoUsuario.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Controls\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\InfosDoUsuario.xaml.cs">
+      <DependentUpon>InfosDoUsuario.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\MenuDeletarAtualizar.xaml.cs">
+      <DependentUpon>MenuDeletarAtualizar.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>

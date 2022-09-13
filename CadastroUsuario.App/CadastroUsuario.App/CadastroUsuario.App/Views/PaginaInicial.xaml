@@ -1,40 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              x:Class="CadastroUsuario.App.Views.PaginaInicial"
-             Title="Pagina Inicial"
+             xmlns:local="clr-namespace:CadastroUsuario.App.Views"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             BackgroundColor="#303030"
              >
-    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add"
+                     Priority ="1"
+                     Order="Primary"
+                     Clicked="NavegarParaCadastrarNovoUsuario"
+                     />
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        
-                
-    <StackLayout >
 
+        <StackLayout >
             <Label Text="Usuários Cadastrados" 
                    FontSize="30" 
                    Margin="10,30,10,10" 
                    HorizontalTextAlignment="Center" 
                    TextColor="#ffff"/>
-        <StackLayout>
-            <RefreshView x:Name ="Refresh" 
-                Refreshing="Atualziar">
-                    <ListView x:Name="UsuariosCadastrados"    ItemSelected="MenuDeletarAtualizar" >
-
+            <StackLayout>
+                <RefreshView x:Name ="Refresh" 
+                Refreshing="Atualizar">
+                    <ListView x:Name="UsuariosCadastrados">
                         <ListView.ItemTemplate >
-                            <DataTemplate >
-
-                                <TextCell  Text="{Binding  DataToDisplay}" 
-                                   TextColor="#ffff"
-                                   
-                                />
-
-
+                            <DataTemplate>
+                                <local:InfosDoUsuario  />
                             </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </RefreshView >
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </RefreshView >
             </StackLayout>
-    </StackLayout>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

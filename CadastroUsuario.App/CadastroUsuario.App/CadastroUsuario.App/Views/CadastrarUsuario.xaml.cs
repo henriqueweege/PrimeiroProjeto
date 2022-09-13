@@ -20,7 +20,7 @@ namespace CadastroUsuario.App
 
         private async void CadastrarUsuarioAsync(object sender, EventArgs e)
         {
-            CreateCadastraUsuarioDto usuario = await CriarUsuario();
+            CreateUsuarioDto usuario = await CriarUsuario();
             if (await EnviarUsuarioParaCadastro(usuario))
             {
                 Navigation.PopToRootAsync();
@@ -28,7 +28,7 @@ namespace CadastroUsuario.App
 
         }
 
-        private async Task<bool> EnviarUsuarioParaCadastro(CreateCadastraUsuarioDto usuario)
+        private async Task<bool> EnviarUsuarioParaCadastro(CreateUsuarioDto usuario)
         {
             var cadastrarServices = new CadastroUsuarioServices();
 
@@ -42,9 +42,9 @@ namespace CadastroUsuario.App
             return false;
         }
 
-        private async Task<CreateCadastraUsuarioDto> CriarUsuario()
+        private async Task<CreateUsuarioDto> CriarUsuario()
         {
-            var usuario = new CreateCadastraUsuarioDto();
+            var usuario = new CreateUsuarioDto();
 
             if (String.IsNullOrEmpty(Nome.Text))
             {
@@ -90,9 +90,6 @@ namespace CadastroUsuario.App
             return usuario;
         }
 
-        private void Voltar(object sender, EventArgs e)
-        { 
-            Navigation.PopAsync();
-        }
+
     }
 }
