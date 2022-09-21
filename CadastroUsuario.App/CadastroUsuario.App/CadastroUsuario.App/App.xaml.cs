@@ -14,18 +14,14 @@ namespace CadastroUsuario.App
 
             try
             {
-            var pagina = new NavigationPage(new PaginaInicial());
+                var pagina = new NavigationPage(new PaginaInicial());
 
-            MainPage = pagina;
+                MainPage = pagina;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 var x = 0;
             }
-
-            
-
-
 
         }
 
