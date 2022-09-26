@@ -16,6 +16,16 @@
         
         }
 
+        public function buscarPorId(string $id): stdClass
+        {
+            $url = "https://cadastrousuario-api.herokuapp.com/Usuario/$id";
+
+            $resultado = (file_get_contents($url));
+            return  (json_decode($resultado));
+
+        }
+
+
         public function cadastrarUsuario(string $json): void
         {
             $url = "https://cadastrousuario-api.herokuapp.com/Usuario";

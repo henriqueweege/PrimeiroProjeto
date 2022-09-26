@@ -9,7 +9,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
     [
         "firstName"=>$_POST['nome'],
         "surName"=>$_POST['sobrenome'],
-        "idade"=>$_POST['idade']
+        "age"=>$_POST['idade']
     ];
 
     $json = json_encode($dados);
@@ -25,13 +25,14 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
 
 <head>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <meta charset="UTF-8">
-    <title>Adicionar Usuario</title>
+    <title>Adicionar Usuário</title>
 </head>
 
-<body>
+<body style="background-color: #34515f">
     <div id="container">
-        <h1>Adicionar Usuario</h1>
+        <h1 id="titulo">Adicionar Usuário</h1>
         <form action="adicionar-usuario.php" method="post">
             <p class="campo-form">
                 <label>Digite o nome do usuário.</label>
@@ -48,8 +49,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
                 <br>
                 <input  type="text" name="idade"/>
             </p>
-            <p>
-                <button class="botao">Cadastrar Usuário</button>
+            <p id="botoes-formulario">
+                <button class="btn btn-success">Cadastrar Usuário</button>
+                <a class="btn btn-secondary " href="index.php">Voltar</a>
             </p>
         </form>
     </div>
